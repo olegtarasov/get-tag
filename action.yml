@@ -1,8 +1,9 @@
 name: 'Get tag name'
 description: 'Gets current tag name and puts it into an environment variable GITHUB_TAG_NAME.'
-icon: 'tag'
-color: 'orange'
 author: 'Oleg Tarasov'
 runs:
   using: 'node12'
   main: 'lib/main.js'
+branding:
+  icon: 'tag'
+  color: 'orange'
