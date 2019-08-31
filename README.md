@@ -1,9 +1,12 @@
-# JavaScript Action Template
+# Get tag name
 
-This template offers an easy way to get started writing a JavaScript action with TypeScript compile time support, unit testing with Jest and using the GitHub Actions Toolkit.
+This simple action gets tag name from commit that triggered the action and puts it into an environment variable GITHUB_TAG_NAME.
 
-## Getting Started
+## Usage
 
-See the walkthrough located [here](https://github.com/actions/toolkit/blob/master/docs/javascript-action.md).
+Dead simple:
 
-In addition to walking your through how to create an action, it also provides strategies for versioning, releasing and referencing your actions.
+```yaml
+    steps:
+      - uses: olegtarasov/get-tag@v1
+```
