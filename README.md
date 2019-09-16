@@ -9,5 +9,9 @@ Dead simple:
 
 ```yaml
     steps:
-      - uses: olegtarasov/get-tag@v1
+      - uses: olegtarasov/get-tag@j1
+        id: tagName
+      - name: Some other step
+        with:
+            tagname: ${{ steps.tagName.outputs.tag }}
 ```
