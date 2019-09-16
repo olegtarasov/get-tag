@@ -4,6 +4,9 @@ author: 'Oleg Tarasov'
 runs:
   using: 'node12'
   main: 'lib/main.js'
+outputs:
+  tag:
+    description: The tag name.
 branding:
   icon: 'tag'
   color: 'orange'

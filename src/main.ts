@@ -6,7 +6,9 @@ async function run() {
     const ref = github.context.ref
     const tagPath = "refs/tags/"
     if (ref && ref.startsWith(tagPath)) {
-      core.exportVariable("GITHUB_TAG_NAME", ref.substr(tagPath.length, ref.length))
+      const tag = ref.substr(tagPath.length, ref.length);
+      core.exportVariable("GITHUB_TAG_NAME", tag);
+      core.setOutput('tag', tag);
     }
   } catch (error) {
     core.setFailed(error.message);
