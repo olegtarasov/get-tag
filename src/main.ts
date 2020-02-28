@@ -20,6 +20,7 @@ async function run() {
           return
         }
       }
+      core.debug(`Setting tag to '${tag}'`)
       core.exportVariable("GIT_TAG_NAME", tag);
       core.setOutput('tag', tag);
     }
