@@ -19,6 +19,10 @@ async function run() {
           core.warning(`Failed to match regex '${regexStr}' in tag string '${tag}'. Result is '${result}'`)
           return
         }
+        
+        result.forEach((match, index) => {
+          core.setOutput('match' + index, match);
+        });
       }
       core.exportVariable("GIT_TAG_NAME", tag);
       core.setOutput('tag', tag);
