@@ -10,7 +10,7 @@ Dead simple:
 
 ```yaml
     steps:
-      - uses: olegtarasov/get-tag@v2
+      - uses: olegtarasov/get-tag@v2.1
         id: tagName
         with:
           tagRegex: "foobar-(.*)"  # Optional. Returns specified group text as tag name. Full tag string is returned if regex is not defined.
@@ -22,4 +22,18 @@ Dead simple:
         run: |
           docker build . --file Dockerfile --tag docker.pkg.github.com/someimage:$GIT_TAG_NAME
 
+```
+
+You can also use named regex groups (thanks to PR from @jelgblad):
+
+```yaml
+    steps:
+      - uses: olegtarasov/get-tag@v2.1
+        id: tagName
+        with:
+          tagRegex: "(?<package>.*)-(?<version>.*)" 
+      - name: Some other step # Output usage example
+        with:
+          dirname: ${{ steps.tagName.outputs.package }}
+          tagname: ${{ steps.tagName.outputs.version }}
 ```
