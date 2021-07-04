@@ -15,7 +15,9 @@ async function run(): Promise<void> {
         if (result && result.length > groupIdx) {
           tag = result[groupIdx]
         } else {
-          core.warning(`Failed to match regex '${regexStr}' in tag string '${tag}'. Result is '${result}'`)
+          core.warning(
+            `Failed to match regex '${regexStr}' in tag string '${tag}'. Result is '${result}'`
+          )
           return
         }
 
