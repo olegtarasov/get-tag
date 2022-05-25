@@ -32,9 +32,9 @@ async function run(): Promise<void> {
       core.setOutput('tag', tag)
     }
   } catch (error) {
-    let errorMessage = "Unknown error";
+    let errorMessage = 'Unknown error'
     if (error instanceof Error) {
-      errorMessage = error.message;
+      errorMessage = error.message
     }
     core.setFailed(errorMessage)
   }
