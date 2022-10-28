@@ -2,7 +2,7 @@ name: 'Get tag name'
 description: 'Gets current tag name and puts it into an environment variable GIT_TAG_NAME.'
 author: 'Oleg Tarasov'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
 inputs:
   tagRegex:
