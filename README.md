@@ -28,7 +28,7 @@ You can also use named regex groups (thanks to PR from @jelgblad):
 
 ```yaml
     steps:
-      - uses: olegtarasov/get-tag@v2
+      - uses: olegtarasov/get-tag@v2.1.2
         id: tagName
         with:
           tagRegex: "(?<package>.*)-(?<version>.*)" 
