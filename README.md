@@ -10,7 +10,7 @@ Dead simple:
 
 ```yaml
     steps:
-      - uses: olegtarasov/get-tag@v2.1.3
+      - uses: olegtarasov/get-tag@v2.1.4
         id: tagName
         with:
           tagRegex: "foobar-(.*)"  # Optional. Returns specified group text as tag name. Full tag string is returned if regex is not defined.
@@ -28,10 +28,10 @@ You can also use named regex groups (thanks to PR from @jelgblad):
 
 ```yaml
     steps:
-      - uses: olegtarasov/get-tag@v2.1.3
+      - uses: olegtarasov/get-tag@v2.1.4
         id: tagName
         with:
-          tagRegex: "(?<package>.*)-(?<version>.*)" 
+          tagRegex: "(?<package>.*)-(?<version>.*)"
       - name: Some other step # Output usage example
         with:
           dirname: ${{ steps.tagName.outputs.package }}
